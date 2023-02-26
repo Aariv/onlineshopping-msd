@@ -1,1 +1,1 @@
-# onlineshopping-msd
+# onlineshopping-microservice development
