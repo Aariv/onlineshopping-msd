@@ -1,4 +1,4 @@
-package com.onlineshopping.service;
+package com.onlineshopping.os.service;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,11 +7,12 @@ import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
-import com.onlineshopping.dto.OrderLineItemsDto;
-import com.onlineshopping.dto.OrderRequest;
-import com.onlineshopping.model.Order;
-import com.onlineshopping.model.OrderLineItems;
+import com.onlineshopping.os.dto.OrderLineItemsDto;
+import com.onlineshopping.os.dto.OrderRequest;
+import com.onlineshopping.os.model.Order;
+import com.onlineshopping.os.model.OrderLineItems;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,8 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderService {
 
 	private final OrderRepository orderRepository;
+	
+	private final WebClient webClient;
 
 	public void placeOrder(OrderRequest orderRequest) {
 		Order order = new Order();
@@ -30,6 +33,10 @@ public class OrderService {
 		List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDto().stream()
 				.map(orderItemDto -> mapToDto(orderItemDto)).collect(Collectors.toList());
 		order.setOrderLineItemsList(orderLineItems);
+		
+		// Call inventory service
+		webClient.get("http://localhost:8083/api/inventories")
+		
 		orderRepository.save(order);
 		log.info("Order is saved {}", order.getId());
 	}

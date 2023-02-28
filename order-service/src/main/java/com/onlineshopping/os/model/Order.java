@@ -1,11 +1,13 @@
-package com.onlineshopping.model;
+package com.onlineshopping.os.model;
 
-import java.math.BigDecimal;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -13,17 +15,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tbl_order_line_items")
+@Table(name = "tbl_order")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class OrderLineItems {
+@AllArgsConstructor
+public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String skuCode;
-	private BigDecimal price;
-	private Integer quanitity;
+	private String orderNumber;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<OrderLineItems> orderLineItemsList;
 	
 }

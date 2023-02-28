@@ -1,8 +1,8 @@
-package com.onlineshopping.dto;
+package com.onlineshopping.os.dto;
 
 import java.util.List;
 
-import com.onlineshopping.model.OrderLineItems;
+import com.onlineshopping.os.model.OrderLineItems;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
