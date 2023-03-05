@@ -7,3 +7,7 @@ All the order details will be captured & maintained in the Postgres.
 ## Inventory Service
 All the inventory details will be captured & maintained in the Postgres.
 ## Notificaton Service
+All the notification will be captured & maintained in the Postgres
+## Discovery Service
+
+## API Gateway Service
