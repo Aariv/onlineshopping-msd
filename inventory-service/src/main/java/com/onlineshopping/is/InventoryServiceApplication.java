@@ -3,12 +3,14 @@ package com.onlineshopping.is;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 import com.onlineshopping.is.model.Inventory;
 import com.onlineshopping.is.repository.InventoryRepository;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {

@@ -1,0 +1,7 @@
+com/onlineshopping/is/dto/InventoryResponse$InventoryResponseBuilder.class
+com/onlineshopping/is/InventoryServiceApplication.class
+com/onlineshopping/is/model/Inventory.class
+com/onlineshopping/is/controller/InventoryController.class
+com/onlineshopping/is/service/InventoryService.class
+com/onlineshopping/is/repository/InventoryRepository.class
+com/onlineshopping/is/dto/InventoryResponse.class

@@ -1,0 +1,10 @@
+com/onlineshopping/ps/dto/ProductResponse$ProductResponseBuilder.class
+com/onlineshopping/ps/model/Product.class
+com/onlineshopping/ps/ProductServiceApplication.class
+com/onlineshopping/ps/service/ProductService.class
+com/onlineshopping/ps/controller/ProductController.class
+com/onlineshopping/ps/model/Product$ProductBuilder.class
+com/onlineshopping/ps/dto/ProductRequest.class
+com/onlineshopping/ps/dto/ProductRequest$ProductRequestBuilder.class
+com/onlineshopping/ps/dto/ProductResponse.class
+com/onlineshopping/ps/repository/ProductRepository.class

@@ -1,0 +1,10 @@
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/controller/OrderController.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/dto/OrderLineItemsDto.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/OrderServiceApplication.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/model/Order.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/dto/OrderRequest.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/model/OrderLineItems.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/service/OrderRepository.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/dto/InventoryResponse.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/config/WebClientConfig.java
+/Users/al/Documents/Personal/workspace/STS/w6/onlineshopping-msd/order-service/src/main/java/com/onlineshopping/os/service/OrderService.java
