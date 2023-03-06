@@ -11,3 +11,4 @@ All the notification will be captured & maintained in the Postgres
 ## Discovery Service
 
 ## API Gateway Service
+All the request that passthrough from here are authenticated & redirected as per the routes configured. 
