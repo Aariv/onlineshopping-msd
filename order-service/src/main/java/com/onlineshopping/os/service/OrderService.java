@@ -29,7 +29,7 @@ public class OrderService {
 
 	private final WebClient.Builder webClientBuilder;
 
-	public void placeOrder(OrderRequest orderRequest) {
+	public String placeOrder(OrderRequest orderRequest) {
 		Order order = new Order();
 		order.setOrderNumber(UUID.randomUUID().toString());
 		List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDto().stream()
@@ -50,6 +50,7 @@ public class OrderService {
 		if (result) {
 			orderRepository.save(order);
 			log.info("Order is saved {}", order.getId());
+			return "Order placed successfully";
 		} else {
 			throw new IllegalArgumentException("Product is not in the stock");
 		}
