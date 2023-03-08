@@ -9,12 +9,14 @@ import javax.transaction.Transactional;
 
 import org.springframework.cloud.sleuth.Span;
 import org.springframework.cloud.sleuth.Tracer;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.onlineshopping.os.dto.InventoryResponse;
 import com.onlineshopping.os.dto.OrderLineItemsDto;
 import com.onlineshopping.os.dto.OrderRequest;
+import com.onlineshopping.os.event.OrderPlacedEvent;
 import com.onlineshopping.os.model.Order;
 import com.onlineshopping.os.model.OrderLineItems;
 
@@ -30,6 +32,7 @@ public class OrderService {
 	private final OrderRepository orderRepository;
 	private final WebClient.Builder webClientBuilder;
 	private final Tracer tracer;
+	private final KafkaTemplate<String, OrderPlacedEvent> kafkaTemplate;
 
 	public String placeOrder(OrderRequest orderRequest) {
 		Order order = new Order();
@@ -54,6 +57,7 @@ public class OrderService {
 			
 			if (result) {
 				orderRepository.save(order);
+				kafkaTemplate.send("notificationTopic", new OrderPlacedEvent(order.getOrderNumber()));
 				log.info("Order is saved {}", order.getId());
 				return "Order placed successfully";
 			} else {
