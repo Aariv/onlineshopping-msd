@@ -1,5 +1,8 @@
 # Online Shopping Microservice Development
 
+# PRODUCT ARCHITECTURE
+![alt ArchDiagram-1](https://github.com/Aariv/onlineshopping-msd/doc/arch-1.png?raw=true)
+
 ## Product Service
 All the product details will be captured & maintained in the Mongo Details.
 ## Order Service
